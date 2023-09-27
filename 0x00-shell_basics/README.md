@@ -6,5 +6,17 @@
 5. This script is used to list all files, hidden and non-hidden
 6. This script displays all the contents in a working directory in a long format numerically.
 7. This script creates a new directory
-8. This script deletes a file
-9. This scripts deletes a directory  
+8.
+9. This script deletes a file 
+10. This scripts deletes an empty directory 
+11. 
+11.
+12.
+13.
+14.
+15.
+16.
+17.
+18.
+19.
+20. 
