@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "\U1F615\n"
+echo -e "\u1F615"
