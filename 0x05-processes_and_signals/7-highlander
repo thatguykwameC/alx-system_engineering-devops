@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# A script that displays "To infinity and beyond" with a 2-second sleep
+
+function ignores_sigterm()
+{
+	echo "I am invicible!!!"
+}
+
+trap ignores_sigterm SIGTERM
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
