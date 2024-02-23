@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A script that displays all processes in a user-oriented format
+
+ps faux
