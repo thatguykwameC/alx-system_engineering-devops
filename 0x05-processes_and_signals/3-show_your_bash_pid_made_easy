@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# A script that filters "bash" processes
+
+pgrep -l bash
