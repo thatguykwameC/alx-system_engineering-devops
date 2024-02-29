@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script uses the netstat command to specifically display listening sockets
+# along with the corresponding programs and PIDs to which each socket belongs.
+netstat -tlnp
