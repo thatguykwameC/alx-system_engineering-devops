@@ -1,0 +1,3 @@
+## Configuration Management
+
+This Repo introduces Puppet, a configuration management tool. It covers Puppet's declarative language for system state modeling, focusing on the `file` resource type for managing files. It discusses Puppet lint for code analysis and Puppet Emacs mode for enhanced editing. Key steps include installing Puppet, learning its language, practicing with 'file' resources, and using lint for code quality. Mastery enables efficient infrastructure management and scalability. Understanding Puppet is crucial for maintaining consistent and reliable systems in modern IT environments.
