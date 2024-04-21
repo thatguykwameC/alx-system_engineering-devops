@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Creates a client configuration file
+
+IdentityFile ~/.ssh/school
+PubKeyAuthentication yes
+PasswordAuthentication no
