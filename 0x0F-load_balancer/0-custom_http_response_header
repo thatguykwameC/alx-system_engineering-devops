@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# This script sets up a new Ubuntu server for a basic web server.
+# It installs nginx and configures it to send a custom header (`X-Server-Name`)
+
+if [ "$EUID" -ne 0 ]; then
+  echo "You must be root to run this script."
+  exit 1
+fi
+
+# Update package lists
+apt update
+
+# Install nginx web server
+apt install -y nginx
+
+# Configure custom response header (replace 'SERVER_NAME' with actual logic)
+echo "add_header X-Server-Name ${SERVER_NAME};" > /etc/nginx/conf.d/custom_headers.conf
+
+# Restart nginx service
+service nginx restart
