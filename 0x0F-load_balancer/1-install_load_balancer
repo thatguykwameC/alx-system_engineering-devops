@@ -18,7 +18,12 @@ apt-get update -y
 # Install HAproxy
 apt-get install -y haproxy=2.0.\*
 
-# Get student ID from environment variable (assuming it's set)
+# Check if STUDENT_ID is set
+if [[ -z "$STUDENT_ID" ]]; then
+  echo "Error: Student ID not found in environment variable STUDENT_ID."
+  exit 1
+fi
+
 student_id=${STUDENT_ID}
 
 # Check if student ID is available
