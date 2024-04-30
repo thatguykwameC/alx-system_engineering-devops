@@ -14,8 +14,8 @@ apt update
 # Install nginx web server
 apt install -y nginx
 
-# Configure custom response header (replace 'SERVER_NAME' with actual logic)
-echo "add_header X-Server-Name ${SERVER_NAME};" > /etc/nginx/conf.d/custom_headers.conf
+# Create custom response header
+echo "add_header X-Served-By $HOSTNAME;" > /etc/nginx/conf.d/custom_headers.conf
 
 # Restart nginx service
 service nginx restart
