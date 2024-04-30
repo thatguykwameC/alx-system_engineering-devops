@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+# This script sets up a round-robin load balancer using HAproxy. 
+# It directs traffic from a single frontend to two backend web servers.
+
+# Update package list
+apt-get update -y
+
+# Install software-properties-common (if not already installed)
+apt-get install -y software-properties-common || true
+
+# Add repository for desired HAproxy version (replace 2.0 with your preference)
+add-apt-repository -y ppa:vbernat/haproxy-2.0
+
+# Update package list again
+apt-get update -y
+
+# Install HAproxy
+apt-get install -y haproxy=2.0.\*
+
+# Get student ID from environment variable (assuming it's set)
+student_id=${STUDENT_ID}
+
+# Check if student ID is available
+if [[ -z "$student_id" ]]; then
+  echo "Error: Student ID not found in environment variable STUDENT_ID."
+  exit 1
+fi
+
+# Define server names based on student ID
+server1_name="${student_id}-web-01"
+server2_name="${student_id}-web-02"
+
+# Configure HAproxy with dynamic server names
+cat << EOF >> /etc/haproxy/haproxy.cfg
+frontend http
+  bind *:80
+  mode http
+  default_backend web-backend
+
+backend web-backend
+  balance roundrobin
+  server $server1_name  <server1_IP>:80 check  # Replace <server1_IP> with actual IP
+  server $server2_name  <server2_IP>:80 check  # Replace <server2_IP> with actual IP
+EOF
+
+# Restart HAproxy service
+service haproxy restart
