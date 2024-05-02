@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # kills the process that is listening on port 80
-
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 service nginx start
 kill -9 "$(cat /var/run/nginx.pid)"
