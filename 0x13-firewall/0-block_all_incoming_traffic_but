@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Configures and installs ufw firewall
 
+apt-get install ufw
+
 ufw default deny incoming
 ufw default allow outgoing
 
