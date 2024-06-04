@@ -16,12 +16,10 @@ def number_of_subscribers(subreddit):
         int: The number of subscribers for the subreddit. Returns 0 if the
         request fails or the subreddit does not exist.
     """
-    # Construct the URL for the Reddit API request
-    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
 
     # Send a GET request to the API to retrieve the number of subscribers
     response = requests.get(
-        url,
+        "https://www.reddit.com/r/{}/about.json".format(subreddit),
         allow_redirects=False,
         headers={"user-agent": "nabuntu_bot-01"},
         timeout=60,
